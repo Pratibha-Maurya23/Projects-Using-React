@@ -1,0 +1,51 @@
+.app-conatiner{
+  display: flex;
+}
+.content{
+width: 100%;
+}
+.sidebar{
+  min-height: 600px;
+}
+/* .post-container{
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+} */
+.color{
+  color: #ffff;
+}
+.footer{
+  display: flex;
+  list-style: none;
+  color: #ffff;
+}
+.border-bottom{
+  border-bottom: 1px solid #5c5f62;
+}
+.footer-box{
+  position: relative;
+  min-height: 300px;
+}
+.footer-pos{
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+.post-card{
+  margin: 20px 10px;
+  min-width: 30rem;
+}
+
+.hashtag{
+  margin: 10px 3px;
+}
+.reactions{
+ width: 100%;
+}
+.create-post{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50px;
+}
