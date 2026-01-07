@@ -9,8 +9,8 @@ const COLOR_MAP = {
 };
 
 export default function useTheme() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [activeStyle, setActiveStyle] = useState('color-1');
+  const [darkMode, setDarkMode] = useState(true);
+  const [activeStyle, setActiveStyle] = useState('color-2');
 
   // Dark mode sync
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function useTheme() {
   useEffect(() => {
     document.documentElement.style.setProperty(
       '--skin-color',
-      COLOR_MAP[activeStyle] || COLOR_MAP['color-1']
+      COLOR_MAP[activeStyle] || COLOR_MAP['color-2']
     );
   }, [activeStyle]);
 
