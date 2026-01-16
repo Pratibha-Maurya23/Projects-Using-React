@@ -38,4 +38,7 @@ app.post('/items', async (req, res) => {
   res.status(201).json({ message: 'Stored new item.', item: newItem });
 });
 
-app.listen(8080);
+const PORT = 8080;  // instead of hardcoding 8080
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
