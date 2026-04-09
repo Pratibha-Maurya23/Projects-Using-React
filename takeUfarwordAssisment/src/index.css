@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f7f8fa] text-text-main font-sans min-h-screen flex justify-center items-center p-8 m-0 box-border;
+  }
+}
+
+/* For continuous range styling, tailwind handles border radius inside the components, 
+   but specific overlapping pseudoelements are easier as custom utilities */
+@layer utilities {
+  .hover-circle-effect {
+    @apply relative z-10 transition-all duration-100 ease-in;
+  }
+  .hover-circle-effect:hover::before {
+    content: '';
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-primary-blue/10 rounded-full -z-10;
+  }
+  .no-hover-circle::before {
+    display: none !important;
+  }
+  
+  .is-today-dot::after {
+    content: '';
+    @apply absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary-blue rounded-full;
+  }
+  .is-today-dot-white::after {
+    @apply bg-white bottom-2;
+  }
+  
+  .bg-lined-paper {
+    background-image: linear-gradient(transparent, transparent calc(2rem - 1px), var(--border-color) calc(2rem - 1px), var(--border-color) 2rem);
+    background-size: 100% 2rem;
+  }
+}
