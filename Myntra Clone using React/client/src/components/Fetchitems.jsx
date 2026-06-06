@@ -14,7 +14,8 @@ useEffect(()=>{
   const controller = new AbortController();
   const signal = controller.signal;
   dispatch(fetchStatusActions.markFetchingStarted());
-  fetch("http://localhost:8080/items",{signal})
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || "https://myntra-clone-react-project-i62y.onrender.com";
+  fetch(`${backendUrl}/items`,{signal})
   .then((res) => res.json())
   .then((data)=> {
      dispatch(fetchStatusActions.markFetchDone());
